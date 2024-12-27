@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>下拉菜单</title>
+  <style>
+    #dropdown {
+      position: relative;
+    }
+ 
+    #dropdownButton {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+ 
+    #dropdownContent {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+ 
+    #dropdownContent a {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+ 
+    #dropdown:hover #dropdownContent {
+      display: block;
+    }
+  </style>
+</head>
+ 
+<body>
+  <div id="dropdown">
+    <button id="dropdownButton">菜单</button>
+    <div id="dropdownContent">
+      <a href="#">选项 1</a>
+      <a href="#">选项 2</a>
+      <a href="#">选项 3</a>
+    </div>
+  </div>
+ 
+  <script>
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownContent = document.getElementById('dropdownContent');
+ 
+    dropdownButton.addEventListener('click', function () {
+      if (dropdownContent.style.display === 'block') {
+        dropdownContent.style.display = 'none';
+      } else {
+        dropdownContent.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+ 
+</html>
