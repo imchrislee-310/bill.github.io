@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动态时钟</title>
+</head>
+ 
+<body>
+  <h1>当前时间：<span id="clock"></span></h1>
+ 
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+ 
+      const formattedTime = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').innerHTML = formattedTime;
+    }
+ 
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+ 
+</html>
